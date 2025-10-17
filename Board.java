@@ -23,7 +23,9 @@ public class Board{
         }
         return result;
     }
-
+	public int[] convertCoords(char[] coords){
+		
+		}
     public void clearBoard(Board b){
         for (int i = 0; i<b.length;i++ ){
             for (int n = 0; n<b[i].length; n++){
@@ -37,6 +39,8 @@ public class Board{
 
     public void placeShips(){
         System.out.println("Placing ships\n");
+        System.out.println("Place Cruiser (length 5) \n\n Where would you like to place the Cruiser: ");
+        
 
     }
 
