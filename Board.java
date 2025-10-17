@@ -24,4 +24,20 @@ public class Board{
         return result;
     }
 
+    public void clearBoard(Board b){
+        for (int i = 0; i<b.length;i++ ){
+            for (int n = 0; n<b[i].length; n++){
+                b[i][n]= " - ";//loop through and fill with " - "
+                
+            }
+
+        }
+
+    }
+
+    public void placeShips(){
+        System.out.println("Placing ships\n");
+
+    }
+
 }
