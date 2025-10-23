@@ -56,6 +56,53 @@ public class Board{
 		int shipLength = shipLengths[shipNumber];
 		//figure out how to check vlidity of placement
 		}
+
+	/*
+	I already have a start on the placeShips methods which references
+	the checkPlacement method
+
+	Pseudocode:
+	1. Prompt users for each ship
+	2. Store each variable like row and column
+	3. Ask for horizontal or vertical (starting the ship placement
+	   at the top left coordinate the user input[will have to inform the use of this])
+	4. Check with the length of the ship that the ship will not be outside of the 10x10
+	   battleship grid
+	5. If the battleship would be outside of the grid inform the user that this has happened
+	   and reprompt the user to enter a valid coordinate
+	6. Loop through all of the ships until all of them have been placed upon the grid
+	7. Print out the grid to show the user where the placemnet have been made
+	8. Another version that does not print anything out may be needed in order for the
+	   computer to place its own ships as well
+
+
+building on my current code...
+	   
+	    public void placeShips(Board b){
+        for(int i = 0; i<shipNames.length; i++){
+			b.clearBoard();
+			System.out.println("Place " + shipNames[i]+ "\n\n Where would you like to place the "+shipNames[i]" \nRow Letter (A-J): ");
+			String row = scan.nextLine();
+			System.out.println("Column (Integer from 1-10): ");
+			int column = (scan.nextInt()-1);
+			String temp = scan.nextLine();
+			System.out.println("Horizontal (H) or Vertical (V): ");
+			// work here to get horizonatl and verical
+			int[] coords = b.convertCoords(row,column);
+			if (checkPlacement)
+			else{
+			 i--;
+			 REPROMPT User to enter another location and recheck (do while?)
+			 
+			}
+			Print (b);
+		
+		
+		
+	
+	
+	
+	*/
     public void placeShips(Board b){
         for(int i = 0; i<shipNames.length; i++){
 			b.clearBoard();
