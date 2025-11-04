@@ -54,6 +54,13 @@ public class Board{
     
 	public boolean checkPlacement(int[] coords,int shipNumber){
 		int shipLength = shipLengths[shipNumber];
+		for(int i =0; i<shiplength; i++){
+			if(i>=10){
+				return false;
+			}
+		}
+		return true;
+
 		//figure out how to check vlidity of placement
 		}
 
@@ -112,9 +119,14 @@ building on my current code...
 			int column = (scan.nextInt()-1);
 			String temp = scan.nextLine();
 			System.out.println("Horizontal (H) or Vertical (V): ");
-			// work here to get horizonatl and verical
+			boolean vertical = (scan.nextLine()=='H');
 			int[] coords = b.convertCoords(row,column);
-			if (checkPlacement)
+			if (checkPlacement&&(!vertical)){
+				for (int n = 0; n < shipLengths[i];n++ ){
+					board[coords[0],(coords[1]+n)];
+				}
+			}
+			// do vertical next
 			else{
 			 i--;	
 			}
@@ -124,4 +136,5 @@ building on my current code...
 
     }
 
+}
 }
