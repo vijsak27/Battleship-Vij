@@ -41,10 +41,14 @@ public class Board{
             result2 += "\n";//line break every 10
 
         }
-        return {result1,result2};
+        String[] result = {result1,result2}
+        return result;
     }
+    
+    
+    
 	public int[] convertCoords(String row, int column){
-			int[] translate = [0,column];
+			int[] translate = {0,column};
 			row = row.charAt(0);
 			if (((int)(row))>=97 && ((int)(row))<=106){
 				translate[i] = ((int)(row))-97; 
@@ -54,11 +58,24 @@ public class Board{
 			}
 			else {
 			 System.out.println("Invalid entry of coordinates");
-			 return {11,11};	
+			 translate = {11,11};
+			 	
 			}
 			return translate;
 			// if char =="r'||char =='R'
 		}
+    
+    
+    public void clearBoard(Board b){
+		for (int i = 0; i<b.length;i++ ){
+            for (int n = 0; n<b[i].length; n++){
+                b[i][n]= " - ";//loop through and fill with " - "
+                
+            }
+
+        }
+	}
+    
     public void clearBoards(){
         for (int i = 0; i<boardShips.length;i++ ){
             for (int n = 0; n<boardShips[i].length; n++){
@@ -134,9 +151,9 @@ building on my current code...
 	
 	
 	*/
-    public void placeShips(Board b){
+    public void placeShips(){
         for(int i = 0; i<shipNames.length; i++){
-			b.clearBoard();
+			clearBoard(boardGuess);
 			System.out.println("Place " + shipNames[i]+ "\n\n Where would you like to place the "+shipNames[i]" \nRow Letter (A-J): ");
 			String row = scan.nextLine();
 			System.out.println("Column (Integer from 1-10): ");
